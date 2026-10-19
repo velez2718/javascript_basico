@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Preguntas</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .contenedor {
+            background: white;
+            width: 100%;
+            max-width: 550px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px #0003;
+            text-align: center;
+        }
+
+        h1 {
+            color: #5b4baf;
+        }
+
+        #progreso {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        #pregunta {
+            font-size: 22px;
+            margin-bottom: 25px;
+        }
+
+        #respuestas {
+            display: grid;
+            gap: 12px;
+        }
+
+        button {
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .opcion {
+            background: #eeeaff;
+            color: #333;
+        }
+
+        .opcion:hover:not(:disabled) {
+            background: #d8d0ff;
+            transform: scale(1.02);
+        }
+
+        .correcta {
+            background: #b8f5c8;
+        }
+
+        .incorrecta {
+            background: #ffc5c5;
+        }
+
+        #mensaje {
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        #siguiente, #reiniciar {
+            background: #6554c0;
+            color: white;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        #siguiente:hover, #reiniciar:hover {
+            background: #49399e;
+        }
+
+        .oculto {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contenedor">
+        <h1>🎯 Reto de Preguntas</h1>
+        <p>¡Pon a prueba tus conocimientos!</p>
+
+        <div id="juego">
+            <p id="progreso"></p>
+            <h2 id="pregunta"></h2>
+
+            <div id="respuestas"></div>
+
+            <p id="mensaje"></p>
+            <button id="siguiente" class="oculto">
+                Siguiente pregunta ➜
+            </button>
+        </div>
+
+        <div id="resultado" class="oculto">
+            <h2>¡Juego terminado! 🎉</h2>
+            <p id="puntajeFinal"></p>
+            <button id="reiniciar">Volver a jugar 🔄</button>
+        </div>
+    </div>
+
+    <script>
+        // CAMBIA ESTAS PREGUNTAS POR LAS DE TU TEMA
+        const preguntas = [
+            {
+                pregunta: "¿Cuál es el objetivo principal de nuestro tema?",
+                opciones: [
+                    "Opción A",
+                    "Opción B",
+                    "Opción C",
+                    "Opción D"
+                ],
+                correcta: 0
+            },
+            {
+                pregunta: "¿Por qué es importante conocer este tema?",
+                opciones: [
+                    "No tiene importancia",
+                    "Ayuda a comprender mejor el tema",
+                    "No sirve para aprender",
+                    "Ninguna de las anteriores"
+                ],
+                correcta: 1
+            },
+            {
+                pregunta: "¿Cuál sería un ejemplo relacionado con el tema?",
+                opciones: [
+                    "Ejemplo incorrecto",
+                    "Otro ejemplo incorrecto",
+                    "Un ejemplo relacionado",
+                    "Ninguno"
+                ],
+                correcta: 2
+            },
+            {
+                pregunta: "¿Qué podemos aprender de este tema?",
+                opciones: [
+                    "Nuevos conocimientos",
+                    "Nada",
+                    "Solo información falsa",
+                    "Ninguna respuesta"
+                ],
+                correcta: 0
+            },
+            {
+                pregunta: "¿Cómo podemos aplicar lo aprendido?",
+                opciones: [
+                    "Ignorándolo",
+                    "Olvidándolo",
+                    "No utilizándolo",
+                    "Poniéndolo en práctica"
+                ],
+                correcta: 3
+            }
+        ];
+
+        let indice = 0;
+        let puntaje = 0;
+        let respondida = false;
+
+        const preguntaElemento =
+            document.getElementById("pregunta");
+        const respuestasElemento =
+            document.getElementById("respuestas");
+        const progresoElemento =
+            document.getElementById("progreso");
+        const mensajeElemento =
+            document.getElementById("mensaje");
+        const siguienteBoton =
+            document.getElementById("siguiente");
+        const juegoElemento =
+            document.getElementById("juego");
+        const resultadoElemento =
+            document.getElementById("resultado");
+
+        function mostrarPregunta() {
+            respondida = false;
+            mensajeElemento.textContent = "";
+            siguienteBoton.classList.add("oculto");
+            respuestasElemento.innerHTML = "";
+
+            const actual = preguntas[indice];
+
+            progresoElemento.textContent =
+                `Pregunta ${indice + 1} de ${preguntas.length}`;
+
+            preguntaElemento.textContent = actual.pregunta;
+
+            actual.opciones.forEach((opcion, i) => {
+                const boton = document.createElement("button");
+
+                boton.textContent = opcion;
+                boton.className = "opcion";
+
+                boton.addEventListener("click", () => {
+                    comprobarRespuesta(i, boton);
+                });
+
+                respuestasElemento.appendChild(boton);
+            });
+        }
+
+        function comprobarRespuesta(seleccion, botonElegido) {
+            if (respondida) return;
+
+            respondida = true;
+
+            const actual = preguntas[indice];
+            const botones =
+                respuestasElemento.querySelectorAll("button");
+
+            botones.forEach((boton, i) => {
+                boton.disabled = true;
+
+                if (i === actual.correcta) {
+                    boton.classList.add("correcta");
+                }
+            });
+
+            if (seleccion === actual.correcta) {
+                puntaje++;
+                mensajeElemento.textContent = "¡Correcto! 🎉";
+                mensajeElemento.style.color = "green";
+            } else {
+                botonElegido.classList.add("incorrecta");
+                mensajeElemento.textContent =
+                    "Incorrecto. ¡Sigue intentando! 💪";
+                mensajeElemento.style.color = "red";
+            }
+
+            siguienteBoton.classList.remove("oculto");
+
+            siguienteBoton.textContent =
+                indice === preguntas.length - 1
+                    ? "Ver resultado"
+                    : "Siguiente pregunta ➜";
+        }
+
+        siguienteBoton.addEventListener("click", () => {
+            indice++;
+
+            if (indice < preguntas.length) {
+                mostrarPregunta();
+            } else {
+                mostrarResultado();
+            }
+        });
+
+        function mostrarResultado() {
+            juegoElemento.classList.add("oculto");
+            resultadoElemento.classList.remove("oculto");
+
+            const porcentaje = Math.round(
+                (puntaje / preguntas.length) * 100
+            );
+
+            document.getElementById("puntajeFinal").textContent =
+                `Tu puntaje es ${puntaje} de ${preguntas.length} (${porcentaje}%).`;
+        }
+
+        document.getElementById("reiniciar")
+            .addEventListener("click", () => {
+                indice = 0;
+                puntaje = 0;
+
+                resultadoElemento.classList.add("oculto");
+                juegoElemento.classList.remove("oculto");
+
+                mostrarPregunta();
+            });
+
+        mostrarPregunta();
+    </script>
+</body>
+</html>
