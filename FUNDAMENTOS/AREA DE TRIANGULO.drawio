@@ -1,0 +1,110 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Página-1" id="WJVkrraGvexacq1Jo4vF">
+    <mxGraphModel dx="1704" dy="905" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="tWo5SDIllGH2l8lXViQ_-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="ALGORTIMO AREA_TRIANGULO" vertex="1">
+          <mxGeometry height="60" width="207.5" x="256.25" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tWo5SDIllGH2l8lXViQ_-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="DEFINIR BASE.ALTURA,AREA COMO REAL" vertex="1">
+          <mxGeometry height="60" width="260" x="230" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="tWo5SDIllGH2l8lXViQ_-3" edge="1" parent="1" source="tWo5SDIllGH2l8lXViQ_-1" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;labelPadding=0 4;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="tWo5SDIllGH2l8lXViQ_-2" value="">
+          <mxGeometry height="50" relative="1" width="50" x="0.0425" as="geometry">
+            <Array as="points" />
+            <mxPoint x="500" y="470" as="sourcePoint" />
+            <mxPoint x="500" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tWo5SDIllGH2l8lXViQ_-5" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="VAMOS A CALCULAR EL AREA DE UN TRIANGULO" vertex="1">
+          <mxGeometry height="60" width="350" x="185" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="tWo5SDIllGH2l8lXViQ_-6" edge="1" parent="1" source="tWo5SDIllGH2l8lXViQ_-2" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;labelPadding=0 4;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="tWo5SDIllGH2l8lXViQ_-5" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points" />
+            <mxPoint x="500" y="460" as="sourcePoint" />
+            <mxPoint x="550" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tWo5SDIllGH2l8lXViQ_-7" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="POR FAVOR DIGITA LA BASE EN NUMEROS&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="350" x="185" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="tWo5SDIllGH2l8lXViQ_-8" edge="1" parent="1" source="tWo5SDIllGH2l8lXViQ_-5" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;labelPadding=0 4;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="tWo5SDIllGH2l8lXViQ_-7" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="360" y="330" />
+            </Array>
+            <mxPoint x="380" y="340" as="sourcePoint" />
+            <mxPoint x="530" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tWo5SDIllGH2l8lXViQ_-9" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="BASE" vertex="1">
+          <mxGeometry height="60" width="120" x="300" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="tWo5SDIllGH2l8lXViQ_-10" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="POR FAVOR DIGITA LA ALTURA EN NUMEROS" vertex="1">
+          <mxGeometry height="60" width="295" x="212.5" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="tWo5SDIllGH2l8lXViQ_-11" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Altura&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="152.5" x="283.75" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="tWo5SDIllGH2l8lXViQ_-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;area + (base*altura) /2&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="310" x="205" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="tWo5SDIllGH2l8lXViQ_-13" edge="1" parent="1" source="tWo5SDIllGH2l8lXViQ_-7" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;labelPadding=0 4;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="tWo5SDIllGH2l8lXViQ_-9" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="360" y="435" />
+            </Array>
+            <mxPoint x="770" y="650" as="sourcePoint" />
+            <mxPoint x="820" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tWo5SDIllGH2l8lXViQ_-14" edge="1" parent="1" source="tWo5SDIllGH2l8lXViQ_-9" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;labelPadding=0 4;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="tWo5SDIllGH2l8lXViQ_-10" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="360" y="540" />
+            </Array>
+            <mxPoint x="770" y="650" as="sourcePoint" />
+            <mxPoint x="820" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tWo5SDIllGH2l8lXViQ_-15" edge="1" parent="1" source="tWo5SDIllGH2l8lXViQ_-10" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;labelPadding=0 4;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="tWo5SDIllGH2l8lXViQ_-11" value="">
+          <mxGeometry height="50" relative="1" width="50" x="0.3096" as="geometry">
+            <Array as="points" />
+            <mxPoint x="370" y="640" as="sourcePoint" />
+            <mxPoint x="820" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tWo5SDIllGH2l8lXViQ_-16" edge="1" parent="1" source="tWo5SDIllGH2l8lXViQ_-11" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;labelPadding=0 4;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="tWo5SDIllGH2l8lXViQ_-12" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="360" y="750" />
+            </Array>
+            <mxPoint x="770" y="650" as="sourcePoint" />
+            <mxPoint x="820" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tWo5SDIllGH2l8lXViQ_-17" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;el area del triangulo es : , area&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="283.5" x="218.25" y="890" as="geometry" />
+        </mxCell>
+        <mxCell id="tWo5SDIllGH2l8lXViQ_-20" edge="1" parent="1" source="tWo5SDIllGH2l8lXViQ_-12" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;labelPadding=0 4;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="tWo5SDIllGH2l8lXViQ_-17" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="220" y="900" as="sourcePoint" />
+            <mxPoint x="270" y="850" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tWo5SDIllGH2l8lXViQ_-21" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;fin de algoritmo&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="180" x="270" y="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="tWo5SDIllGH2l8lXViQ_-22" edge="1" parent="1" source="tWo5SDIllGH2l8lXViQ_-17" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;labelPadding=0 4;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="tWo5SDIllGH2l8lXViQ_-21" value="">
+          <mxGeometry height="50" relative="1" width="50" x="-0.3621" as="geometry">
+            <Array as="points" />
+            <mxPoint x="220" y="890" as="sourcePoint" />
+            <mxPoint x="270" y="840" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
